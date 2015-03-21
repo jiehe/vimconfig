@@ -1,0 +1,100 @@
+"显示行号 
+set nu 
+"语法高亮 
+set syntax=on 
+"设置编码 
+set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936 
+set termencoding=utf-8 
+set encoding=utf-8 
+set fileencodings=ucs-bom,utf-8,cp936 
+set fileencoding=utf-8 
+set enc=utf-8 
+" 映射全选+复制 ctrl+a 
+map ggVGY 
+map! ggVGY 
+map gg=G 
+" 选中状态下 Ctrl+c 复制 todo 设置Ctrl+v粘贴的时候出错 
+vmap "+y 
+" 设置当文件被改动时自动载入 
+set autoread 
+" 代码补全 
+set completeopt=preview,menu 
+"允许插件 
+filetype plugin on 
+" 共享剪贴板 
+set clipboard=nunamed 
+" 从不备份 
+set nobackup 
+" 统一缩进 
+set softtabstop=4 
+set shiftwidth=4 
+"历史记录数 
+set history=1000 
+"禁止生成临时文件 
+set nobackup 
+set noswapfile 
+"搜索忽略大小写 
+set ignorecase 
+"搜索逐字符高亮 
+set hlsearch 
+set incsearch 
+" 侦测文件类型 
+filetype on 
+" 高亮显示匹配的括号 
+set showmatch 
+set nocompatible " be iMproved, required 
+" set the runtime path to include Vundle and initialize 
+set rtp+=~/.vim/bundle/Vundle.vim 
+call vundle#begin() 
+Plugin 'gmarik/vundle' 
+
+Plugin 'L9' 
+
+Plugin 'ctrlp.vim' 
+let g:ctrlp_map = '' 
+let g:ctrlp_cmd = 'CtrlP' 
+
+Plugin 'editorconfig/editorconfig-vim' 
+Plugin 'Raimondi/delimitMate' 
+Plugin 'nathanaelkane/vim-indent-guides' 
+Plugin 'chrisbra/SudoEdit.vim' 
+Plugin 'bling/vim-airline' 
+Plugin 'scrooloose/nerdtree' 
+Plugin 'sjl/gundo.vim' 
+Plugin 'FuzzyFinder' 
+
+if has('lua') 
+Bundle 'Shougo/neocomplete.vim' 
+let g:neocomplete#enable_at_startup = 1 
+end 
+
+Plugin 'sirver/ultisnips' 
+Plugin 'honza/vim-snippets' 
+let g:UltiSnipsExpandTrigger='' 
+let g:UltiSnipsJumpForwardTrigger='' 
+let g:UltiSnipsJumpBackwardTrigger='' 
+let g:UltiSnipsEditSplit='vertical' 
+
+" Git 
+Plugin 'tpope/vim-fugitive' 
+Plugin 'kablamo/vim-git-log' 
+Plugin 'airblade/vim-gitgutter' 
+" " Theme 
+Plugin 'altercation/vim-colors-solarized' 
+" " Front-end 
+Plugin 'kchmck/vim-coffee-script' 
+Plugin 'digitaltoad/vim-jade' 
+Plugin 'genoma/vim-less' 
+Plugin 'mattn/emmet-vim' 
+Plugin 'pangloss/vim-javascript' 
+" let javascript_enable_domhtmlcss=1 
+Plugin 'elzr/vim-json' 
+Plugin 'godlygeek/tabular' 
+Plugin 'plasticboy/vim-markdown' 
+call vundle#end() " required 
+filetype plugin indent on " required 
+
+
+" 插件配置 Plugin config 
+" nerdtree 
+ autocmd vimenter * NERDTree
